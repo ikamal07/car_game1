@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Thomas Racer - PWA</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header><h1>Thomas Racer</h1><button id="startBtn">Start Race</button><button id="muteBtn">Mute</button></header>
+  <main>
+    <canvas id="game" width="480" height="720" tabindex="0"></canvas>
+  </main>
+  <footer>
+    <div id="hud">Score: <span id="score">0</span> Lives: <span id="lives">3</span></div>
+    <div class="controls">
+      <button id="left">◀</button>
+      <button id="boost">Boost</button>
+      <button id="right">▶</button>
+    </div>
+  </footer>
+</div>
+
+<script src="main.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js').catch(console.error);
+}
+</script>
+</body>
+</html>
